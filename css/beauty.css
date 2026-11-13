@@ -86,19 +86,23 @@ a:hover { color: var(--neon-3); }
   box-shadow: 1px 0 0 rgba(148, 163, 203, .12);
 }
 
-/* 顶部霓虹横幅（覆盖内联浅色渐变） */
+/* 顶部横幅：深空色调，融入暗色主题（覆盖内联浅色渐变） */
 .left-col .overlay {
-  background: linear-gradient(130deg,
-    #1d3a8f 0%, #2f4fd0 28%, #6a4fe0 62%, #8d43e8 84%, #9d3df0 100%) !important;
+  background:
+    radial-gradient(ellipse 75% 95% at 50% -15%, rgba(124, 108, 240, .22), transparent 66%),
+    radial-gradient(ellipse 48% 60% at 85% 115%, rgba(73, 177, 245, .12), transparent 62%),
+    linear-gradient(180deg, #151936 0%, #10142a 100%) !important;
   height: 175px !important;
 }
 .left-col .overlay::after {
+  /* 底部细霓虹光线，作为横幅与侧栏的分界点缀 */
   content: "";
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 62% 100% at 18% 0%, rgba(255, 255, 255, .22), transparent 62%),
-    radial-gradient(ellipse 42% 78% at 92% 100%, rgba(180, 107, 255, .35), transparent 64%);
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent, rgba(124, 108, 240, .55) 30%, rgba(73, 177, 245, .5) 70%, transparent);
+  box-shadow: 0 0 14px rgba(124, 108, 240, .45);
   pointer-events: none;
 }
 
