@@ -249,12 +249,28 @@ a:hover { color: var(--neon-3); }
 #hitokoto { color: #c7d2fe !important; text-shadow: 0 0 12px rgba(124, 108, 240, .3); }
 #from { color: var(--text-3) !important; }
 
-/* 滑出面板内的归档/标签列表 */
-.tools-col .search,
-.tools-col .tools-section {
+/* 滑出面板（所有文章/友链/关于我）：深色实体面板，不再透底 */
+.tools-col.show,
+.tools-col.show .tools-wrap {
+  background: linear-gradient(180deg, #141936 0%, #0e1226 100%);
+  border-right: 1px solid rgba(148, 163, 203, .14);
+  box-shadow: 22px 0 55px rgba(0, 0, 0, .6);
+}
+.tools-col .tools-section,
+.tools-col .search {
   background: transparent !important;
   border: none !important;
 }
+.tools-col .tools-wrap { color: var(--text-2); }
+.tools-col .search-ul { color: var(--text-2) !important; }
+.tools-col .search-li { border-bottom: 1px dotted rgba(148, 163, 203, .22) !important; }
+.tools-col .search-li:hover { background: rgba(124, 108, 240, .12) !important; }
+.tools-col .search-li a.search-title {
+  color: #dfe6f5;
+  transition: color .25s ease;
+}
+.tools-col .search-li a.search-title:hover { color: #6cb6ff; }
+.tools-col .search-li a.search-title .icon-quo-left { color: var(--neon-2); }
 .tools-col .header-menu.tools-nav li a { color: var(--text-2); }
 .tools-col .header-menu.tools-nav ul a.active {
   background: none !important;
